@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> </title>
+</head>
+<body style="text-align:center;background:#EEEEEEE;font-family:arial,b8bf53,sans-serif;color:#FFFFFFF;">
+<div style="font-size:125px;margin-top:350px;">
+<p id="hitokoto"><b><a href="#" style="color:#000000;text-decoration:none;" id="hitokoto_text">:D 获取中...</a></b></p>
+<!-- 以下写法，选取一种即可 -->
+
+<!-- 现代写法，推荐(不支持 IE) -->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
+</script>
+</div>
+</body>
+</html>
